@@ -2,16 +2,21 @@ const gameGrid = document.querySelector('.game')
 let user = document.createElement('div');
 let userChoice = document.createElement('p');
 let userCompteur = document.createElement('p');
+let userCompteurDiplay = document.createElement('span');
+let computerCompteurDiplay = document.createElement('span');
 let computer = document.createElement('div');
 let computerChoice = document.createElement('p');
 let computerCompteur = document.createElement('p');
+let resultDisplay = document.querySelector('.result')
 
 
 /*******user informations***********************************************************************/
 
 user.classList.add('user-box');
 user.textContent = 'User';
-userCompteur.innerHTML = "counter" + " 0 "
+userCompteur.textContent = "counter";
+userCompteurDiplay.textContent = "0";
+userCompteur.appendChild(userCompteurDiplay)
 user.appendChild(userCompteur)
 gameGrid.appendChild(user);
 
@@ -21,7 +26,9 @@ computer.innerHTML = 'Computer'
 computer.classList.add('computer')
 computer.textContent = 'Computer';
 
-computerCompteur.innerHTML = "counter"+" "+"0";
+computerCompteur.textContent = "counter";
+computerCompteurDiplay.textContent = "0"
+computerCompteur.appendChild(computerCompteurDiplay)
 computer.appendChild(computerChoice);
 computer.appendChild(computerCompteur)
 
@@ -32,12 +39,11 @@ const choice = ['paper','rock','scissors'];
 
 function clicking(e){
     let clickedThing = e.target.id
+    resultDisplay.innerHTML = "";
     userChoice.innerHTML = clickedThing;
-    console.log(clickedThing)
     computerChoice.innerHTML = choice[Math.floor(choice.length*Math.random())];
     user.appendChild(userChoice)
     computer.appendChild(computerChoice)
-    console.log(computerChoice)
     getResult(userChoice,computerChoice)
 }
 /**************************making buttons*******************************************************/
@@ -53,5 +59,39 @@ for(let i=0;i<choice.length; i++){
 
 /******************************************getting to know who won****************************** */
 function getResult(userChoice,computerChoice){
-    console.log(userChoice,computerChoice)
+    let userDisplay = userChoice.innerHTML;
+    let computerDisplay = computerChoice.innerHTML;
+    switch(userDisplay+computerDisplay){
+        case 'scissorspaper':
+        case 'rockscissors' :
+        case 'paperrock':
+        userwon()
+        break
+        case 'paperscissors':
+        case 'scissorsrock' :
+        case 'rockppaper':
+        computerwon()
+        break
+        case 'paperpaper':
+        case 'scissorsscissors' :
+        case 'rockrock':
+        egalite()
+        break
+
+    }
+    
+    
+   
+}
+function userwon(){
+    resultDisplay.innerHTML = "User Won"
+    console.log(userCompteur.innerHTML)
+    userCompteurDiplay.textContent++;
+}
+function computerwon(){
+    resultDisplay.innerHTML = "Computer Won"
+    computerCompteurDiplay.textContent++;
+}
+function egalite(){
+    resultDisplay.innerHTML = "nobody won"
 }

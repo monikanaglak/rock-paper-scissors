@@ -11,6 +11,8 @@ let computerCompteur = document.createElement('p');
 
 user.classList.add('user-box');
 user.textContent = 'User';
+userCompteur.innerHTML = "counter" + " 0 "
+user.appendChild(userCompteur)
 gameGrid.appendChild(user);
 
 
@@ -31,9 +33,12 @@ const choice = ['paper','rock','scissors'];
 function clicking(e){
     let clickedThing = e.target.id
     userChoice.innerHTML = clickedThing;
-    
+    console.log(clickedThing)
+    computerChoice.innerHTML = choice[Math.floor(choice.length*Math.random())];
     user.appendChild(userChoice)
-    computerChoosing(choice)
+    computer.appendChild(computerChoice)
+    console.log(computerChoice)
+    getResult(userChoice,computerChoice)
 }
 /**************************making buttons*******************************************************/
 for(let i=0;i<choice.length; i++){
@@ -45,10 +50,8 @@ for(let i=0;i<choice.length; i++){
     gameGrid.appendChild(button)
 }
 
-function computerChoosing(choice){
-    computerChoice.innerHTML = choice[Math.floor(choice.length*Math.random())];
-    computer.appendChild(computerChoice)
-    
-    
-}
+
 /******************************************getting to know who won****************************** */
+function getResult(userChoice,computerChoice){
+    console.log(userChoice,computerChoice)
+}

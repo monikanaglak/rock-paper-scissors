@@ -1,3 +1,12 @@
+window.addEventListener('load', 
+  function() { 
+    let preloader = document.querySelector('.preloader');
+    preloader.classList.add("preloader-finish")
+    
+    
+  });
+
+
 const gameGrid = document.querySelector(".game");
 let user = document.createElement("div");
 let userChoice = document.createElement("p");
@@ -9,6 +18,7 @@ let computerChoice = document.createElement("p");
 let computerCompteur = document.createElement("p");
 let resultDisplay = document.querySelector(".result");
 let gameOver = document.querySelector(".gameover");
+let butons = document.querySelector(".butons")
 
 /*******user informations***********************************************************************/
 
@@ -52,7 +62,8 @@ for (let i = 0; i < choice.length; i++) {
   button.id = choice[i];
   button.innerHTML = choice[i];
   button.addEventListener("click", clicking);
-  gameGrid.appendChild(button);
+  butons.appendChild(button)
+  
 }
 
 /******************************************getting to know who won****************************** */

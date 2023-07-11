@@ -1,11 +1,4 @@
-/*window.addEventListener('load', 
-  function() { 
-    let preloader = document.querySelector('.preloader');
-    preloader.classList.add("preloader-finish")
-    
-    
-  });
-*/
+
 
 const gameGrid = document.querySelector(".game");
 let user = document.createElement("div");

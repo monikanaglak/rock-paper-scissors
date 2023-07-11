@@ -19,9 +19,23 @@ body{
     width: 50vw;
 }
 .startgame{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 50vw;
     background-color: pink;
     height: 100vh;
+}
+button.letsplay{
+    padding: 50px;
+    border-radius: 25px;
+    background-color: pink;
+    
+
+}
+button a{
+    text-decoration: none;
+    color:white;
 }
 
 .rock,.paper,.scissors{
@@ -71,16 +85,6 @@ body{
     }
 }
 
-.preloader-finish{
-    animation: vanish 1.25s ease 3.5s forwards;
-}
-
-@keyframes vanish{
-    100%{
-        opacity: 0;
-        visibility: hidden;
-    }
-}
 header{
     display: flex;
     flex-direction: column;
@@ -91,16 +95,20 @@ header{
 .game{
     display: flex;
     justify-content: center;
+    width: 100%;
     margin-top: 10vh;
-    
+    border:2px solid red;
 }
 .btn{
     width: 200px;
 }
 .user-box{
-    width: 200px;
-    height: 100px;
+    width: 250px;
+    height: 300px;
     border:1px solid black;
+}
+.user-box p{
+    color:red;
 }
 .computer{
     width: 200px;

@@ -1,5 +1,25 @@
+const all_buttons = document.querySelectorAll('button');
+const user_choice_display = document.querySelector('.user_choice_display');
+const computer_choice_display = document.querySelector('.computer_choice_display');
+const choice = ["paper", "rock", "scissors"];
+all_buttons.forEach(btn=>{
+  btn.addEventListener('click',(e)=>{
+    user_choice_display.textContent  = e.target.id;
+    computer_choice_display.textContent = choice[Math.floor(choice.length * Math.random())];
+    
+  })
+})
+/*function clicking(e) {
+  let clickedThing = e.target;
+  console.log(clickedThing)
+  /*resultDisplay.innerHTML = "";
+  userChoice.innerHTML = clickedThing;
+  computerChoice.innerHTML = choice[Math.floor(choice.length * Math.random())];
+  user.appendChild(userChoice);
+  computer.appendChild(computerChoice);
+  getResult(userChoice, computerChoice);*/
 
-
+/*
 const gameGrid = document.querySelector(".game");
 let user = document.createElement("div");
 let userChoice = document.createElement("p");
@@ -11,19 +31,24 @@ let computerChoice = document.createElement("p");
 let computerCompteur = document.createElement("p");
 let resultDisplay = document.querySelector(".result");
 let gameOver = document.querySelector(".gameover");
-let butons = document.querySelector(".butons")
+let butons = document.querySelector(".butons");
+
+let preloader = document.querySelector(".preloader");
 
 /*******user informations***********************************************************************/
-
+/*
 user.classList.add("user-box");
 user.textContent = "User";
+
 userCompteur.textContent = "counter";
 userCompteurDiplay.textContent = "0";
 userCompteur.appendChild(userCompteurDiplay);
 user.appendChild(userCompteur);
 gameGrid.appendChild(user);
 
-/*************************computer box*********************************************************/
+body.appendChild(gameGrid)
+
+/*************************computer box*********************************************************
 computer.innerHTML = "Computer";
 computer.classList.add("computer");
 computer.textContent = "Computer";
@@ -36,7 +61,7 @@ computer.appendChild(computerCompteur);
 
 gameGrid.appendChild(computer);
 /*************************compteur***********************************************************/
-/************array of choice*******************************************************************/
+/************array of choice*******************************************************************
 const choice = ["paper", "rock", "scissors"];
 
 function clicking(e) {
@@ -48,7 +73,7 @@ function clicking(e) {
   computer.appendChild(computerChoice);
   getResult(userChoice, computerChoice);
 }
-/**************************making buttons*******************************************************/
+/**************************making buttons*******************************************************
 for (let i = 0; i < choice.length; i++) {
   const button = document.createElement("button");
   button.classList.add("btn");
@@ -56,10 +81,11 @@ for (let i = 0; i < choice.length; i++) {
   button.innerHTML = choice[i];
   button.addEventListener("click", clicking);
   butons.appendChild(button)
+  body.appendChild(butons)
   
 }
 
-/******************************************getting to know who won****************************** */
+/******************************************getting to know who won****************************** *
 function getResult(userChoice, computerChoice) {
   let userDisplay = userChoice.innerHTML;
   let computerDisplay = computerChoice.innerHTML;
@@ -99,3 +125,4 @@ function computerwon() {
 function egalite() {
   resultDisplay.innerHTML = "nobody won";
 }
+*/

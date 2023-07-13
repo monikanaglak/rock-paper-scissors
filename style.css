@@ -133,3 +133,7 @@ ul.transition li{
     justify-content: center;
     font-size: 2rem;
 }
+.game_container{
+    background-color: pink;
+    height: 100vh;
+}

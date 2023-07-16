@@ -16,8 +16,7 @@ function pageTransition() {
 }
 function contentAnimation() {
   var tl = gsap.timeline();
-  tl.from(".lets", { duration: 1.5, tranlateY: 50, opacity: 0 },"-=1.1");
-  tl.to(".lets", { duration: 1.5, tranlateY: 150, opacity: 1 });
+  tl.from(".lets", { duration: 1.5, y: -50, opacity: 0});
 }
 
 const tl = gsap.timeline();

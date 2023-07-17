@@ -4,10 +4,8 @@
   box-sizing: border-box;
 }
 body {
-  font-family: "Roboto", sans-serif;
   font-family: "Bangers", cursive;
   background-image: url("./images/backgroundtwo.jpg");
-  
 }
 .preloader {
   display: flex;
@@ -30,15 +28,16 @@ body {
 button.letsplay {
   padding: 25px 50px;
   border-radius: 25px;
-  background-color:#EC4AEF;
+  background-color: #ec4aef;
   border: 10px solid black;
   margin-top: 45vh;
+  opacity: 80%;
 }
 button a {
   text-decoration: none;
   color: white;
   font-size: 2rem;
-  font-family:"Bangers", cursive;
+  font-family: "Bangers", cursive;
 }
 .rock,
 .paper,
@@ -94,26 +93,72 @@ header {
   justify-content: center;
   align-items: center;
   margin-top: 3vh;
-  color:white;
+  color: white;
 }
-.user header {
-  border: 2px solid yellow;
-}
-.user_box {
+section.user,
+section.computer {
   display: flex;
-  justify-content: space-around;
-  width: 10vw;
+  flex-direction: column;
+  gap: 20px;
+  background-color: #5f40ce;
+  opacity: 85%;
+  height: 50vh;
+  width: 30vw;
+  border-radius: 25px;
+  padding: 30px;
+}
+
+span {
+  color: white;
+}
+.user header,
+.computer header {
+  font-family: "Bangers", cursive;
+  font-size: 2rem;
+}
+
+.user_choice_display,
+.computer_choice_display {
+  padding-left: 30px;
+}
+section p {
+  color: white;
+}
+.user_box,
+.computer_box {
+  display: flex;
 }
 .game {
   display: flex;
   justify-content: center;
+  gap: 5vw;
   width: 100%;
   margin-top: 10vh;
 }
+main {
+  border: 2px solid red;
+}
+.result {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
 .btn {
   width: 200px;
+  padding: 15px;
+  border-radius: 15px;
+  border: none;
+  background-color: #ec4aef;
+  color: white;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
-
+.butons {
+  display: flex;
+  justify-content: center;
+  gap: 2vw;
+  margin-top: 15px;
+}
 ul.transition {
   display: flex;
   position: absolute;
@@ -133,12 +178,26 @@ ul.transition li {
   list-style: none;
 }
 
-.lets {
+.welcome_first {
   display: flex;
   justify-content: center;
   font-size: 2rem;
 }
 .game_container {
-    background-image: url("./images/backgroundtwo.jpg");
+  background-image: url("./images/backgroundtwo.jpg");
   height: 100vh;
+}
+.result {
+  color: white;
+  font-size: 2rem;
+}
+.gameover .stop{
+  position: absolute;
+  top:0;
+  left:0;
+  color:white;
+  border:2px solid white;
+  height: 100vh;
+  background-color: red;
+  width: 100%;
 }

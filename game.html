@@ -22,8 +22,8 @@
     </ul>
       <main data-barba="container" data-barba-namespace = "game" class="game_container">
       <header>
-        <h1 class="lets">Let's play Rock Paper Scissors</h1>
-        <h2 class="lets">Who first gets 5 points win the hole game!!!!</h2>
+        <h1 class="welcome_first">Rock Paper Scissors</h1>
+        <h2 class="welcome_secondp">Who first gets 3 points win the hole game!!!!</h2>
       </header>
       <div class="game">
         <section class="user">
@@ -32,25 +32,27 @@
             <p class="user_choice">Player has chosen : </p>
             <span class="user_choice_display"></span>
           </div>
-          <p class="user_compteur">Player score <span>0</span></p>
+          <p >Player score <span class="user_compteur">0</span></p>
         </section>
 
         <section class="computer">
           <header>Computer</header>
           <div class="computer_box">
-            <p class="computer_choice">Computer a choisi</p>
+            <p class="computer_choice">Computer has chosen : </p>
             <span class="computer_choice_display"></span>
           </div>
-          <p class="user_compteur">Computer Score <span>0</span></p>
+          <p>Computer score <span  class="computer_compteur">0</span></p>
         </section>
       </div>
+      <div class="result"></div>
+      <div class="gameover"></div>
       <div class="butons">
         <button class="rock_btn btn" id="rock">Rock</button>
         <button class="paper_btn btn" id="paper">Paper</button>
         <button class="scissors_btn btn" id="scissors">Scissors</button>
       </div>
-      <div class="result"></div>
-      <div class="gameover"></div>
+     
+     
     </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.1/gsap.min.js"></script>
     <script src="https://unpkg.com/@barba/core"></script>

@@ -12,6 +12,7 @@ const choice = ["paper", "rock", "scissors"];
 all_buttons.forEach((btn) => {
   btn.addEventListener("click", (e) => {
     user_choice_display.textContent = e.target.id;
+    console.log(user_choice_display)
     computer_choice_display.textContent =
       choice[Math.floor(choice.length * Math.random())];
     getResult(user_choice_display, computer_choice_display);
@@ -41,14 +42,14 @@ function getResult(user_choice_display, computer_choice_display) {
 function userwon() {
   resultDisplay.innerHTML = "User Won";
   user_compteur.textContent++;
-  if (user_compteur.innerHTML == 3) {
+  if (user_compteur.innerHTML == 5) {
     game_over.innerHTML = "Game over";
   }
 }
 function computerwon() {
   resultDisplay.innerHTML = "Computer Won";
   computer_compteur.textContent++;
-  if (computer_compteur.innerHTML == 3) {
+  if (computer_compteur.innerHTML == 5) {
     game_over.innerHTML = "Game over";
   }
 }

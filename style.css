@@ -7,7 +7,18 @@ body {
   font-family: "Bangers", cursive;
   background-image: url("./images/backgroundtwo.jpg");
 }
-
+.monika{
+  height: 50px;
+  height: 50px;
+  background-color: red;
+  display:none;
+}
+.monika.ewa{
+  height: 50px;
+  height: 50px;
+  background-color: red;
+  display: block;
+}
 .preloader {
   display: flex;
 }

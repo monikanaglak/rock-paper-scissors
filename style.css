@@ -135,9 +135,7 @@ section p {
   width: 100%;
   margin-top: 10vh;
 }
-main {
-  border: 2px solid red;
-}
+
 .result {
   display: flex;
   justify-content: center;

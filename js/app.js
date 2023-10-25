@@ -62,4 +62,5 @@ function egalite() {
 function restart_game(){
   user_compteur.innerHTML = 0;
   computer_compteur.innerHTML = 0;
+  game_over.innerHTML = "lets try again, three points to won"
 }

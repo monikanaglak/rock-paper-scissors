@@ -7,6 +7,7 @@ body {
   font-family: "Bangers", cursive;
   background-image: url("./images/backgroundtwo.jpg");
 }
+
 .preloader {
   display: flex;
 }

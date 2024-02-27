@@ -19,6 +19,16 @@ body {
   background-color: red;
   display: block;
 }
+.choice_restart{
+  display:none;
+}
+.choice_restart.visible button{
+  display: block;
+  border:2px solid red;
+  z-index: 9999;
+  padding:20px;
+  color:white;
+}
 .preloader {
   display: flex;
 }

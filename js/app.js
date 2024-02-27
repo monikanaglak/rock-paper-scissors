@@ -8,7 +8,8 @@ let user_compteur= document.querySelector(".user_compteur");
 let computer_compteur= document.querySelector(".computer_compteur");
 let game_over = document.querySelector(".welcome_secondp");
 const choice = ["paper", "rock", "scissors"];
-let test = document.querySelector(".monika")
+
+
 
 all_buttons.forEach((btn) => {
   btn.addEventListener("click", (e) => {
@@ -42,21 +43,22 @@ function getResult(user_choice_display, computer_choice_display) {
 function userwon() {
   resultDisplay.innerHTML = "User Won";
   user_compteur.textContent++;
-  console.log(user_compteur.innerHTML)
-  console.log(computer_compteur.innerHTML)
-  
-  if (user_compteur.innerHTML == 3) {
+  if (user_compteur.innerHTML >= 3) {
     game_over.innerHTML = "Game over";
+    restart_game()
     
   }
 }
+let restart_btn = document.querySelector(".choice_restart");
 function computerwon() {
   resultDisplay.innerHTML = "Computer Won";
   computer_compteur.textContent++;
-  if (computer_compteur.innerHTML == 3) {
+  if (computer_compteur.innerHTML >= 3) {
     game_over.innerHTML = "Game over";
     
+    restart_btn.classList.add("visible")
   }
+  
 }
 function egalite() {
   resultDisplay.innerHTML = "nobody won";
@@ -66,3 +68,4 @@ function restart_game(){
   computer_compteur.innerHTML = 0;
   game_over.innerHTML = "lets try again, three points to won"
 }
+

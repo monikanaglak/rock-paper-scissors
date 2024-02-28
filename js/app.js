@@ -1,17 +1,19 @@
+
 const all_buttons = document.querySelectorAll("button");
 const user_choice_display = document.querySelector(".user_choice_display");
 const computer_choice_display = document.querySelector(
   ".computer_choice_display"
 );
-const resultDisplay = document.querySelector(".result");
+const result_display = document.querySelector(".result");
 let user_compteur= document.querySelector(".user_compteur");
 let computer_compteur= document.querySelector(".computer_compteur");
 let game_over = document.querySelector(".welcome_secondp");
 const choice = ["paper", "rock", "scissors"];
-
+const monika = gsap.timeline();
 
 
 all_buttons.forEach((btn) => {
+  
   btn.addEventListener("click", (e) => {
     user_choice_display.textContent = e.target.id;
     computer_choice_display.textContent =
@@ -40,20 +42,26 @@ function getResult(user_choice_display, computer_choice_display) {
       break;
   }
 }
+let restart_btn = document.querySelector(".choice_restart");
 function userwon() {
-  resultDisplay.innerHTML = "User Won";
+  result_display.innerHTML = "User Won";
   user_compteur.textContent++;
-  if (user_compteur.innerHTML >= 3) {
+  console.log(user_compteur.innerHTML)
+  if (user_compteur.innerHTML == 3) {
     game_over.innerHTML = "Game over";
-    restart_game()
+    let hello = document.querySelector(".hello");
+    hello.classList.add("visible")
+    monika.to(".hello",{height:700,duration:1,delay:0.2});
+
     
   }
 }
-let restart_btn = document.querySelector(".choice_restart");
+
 function computerwon() {
-  resultDisplay.innerHTML = "Computer Won";
+  result_display.innerHTML = "Computer Won";
   computer_compteur.textContent++;
-  if (computer_compteur.innerHTML >= 3) {
+  console.log(computer_compteur.innerHTML)
+  if (computer_compteur.innerHTML == 3) {
     game_over.innerHTML = "Game over";
     
     restart_btn.classList.add("visible")
@@ -61,7 +69,7 @@ function computerwon() {
   
 }
 function egalite() {
-  resultDisplay.innerHTML = "nobody won";
+  result_display.innerHTML = "nobody won";
 }
 function restart_game(){
   user_compteur.innerHTML = 0;

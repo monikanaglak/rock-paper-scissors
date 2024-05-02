@@ -43,17 +43,16 @@ function getResult(user_choice_display, computer_choice_display) {
   }
 }
 let restart_btn = document.querySelector(".choice_restart");
+
 function userwon() {
   result_display.innerHTML = "User Won";
   user_compteur.textContent++;
-  console.log(user_compteur.innerHTML)
+  
   if (user_compteur.innerHTML == 3) {
     game_over.innerHTML = "Game over";
     let hello = document.querySelector(".hello");
     hello.classList.add("visible")
     monika.to(".hello",{height:700,duration:1,delay:0.2});
-
-    
   }
 }
 
@@ -69,11 +68,11 @@ function computerwon() {
   
 }
 function egalite() {
-  result_display.innerHTML = "nobody won";
+  result_display.innerHTML = "Nobody won";
 }
 function restart_game(){
   user_compteur.innerHTML = 0;
   computer_compteur.innerHTML = 0;
-  game_over.innerHTML = "lets try again, three points to won"
+  game_over.innerHTML = "Let's try again, three points to won"
 }
 

@@ -1,22 +1,22 @@
 function pageTransition() {
-  var tl = gsap.timeline();
+  var tl = gsap.timeline()
   tl.to("ul.transition li", {
     duration: 0.5,
     scaleY: 1,
     transformOrigin: "bottom left",
     stagger: 0.2,
-  });
+  })
   tl.to("ul.transition li", {
     duration: 0.5,
     scaleY: 0,
     transformOrigin: "bottom left",
     stagger: 0.1,
     delay: 0.1,
-  });
+  })
 }
 function contentAnimation() {
   var tl = gsap.timeline();
-  tl.from(".welcome_first", { duration: 1.5, y: -50, opacity: 0});
+  tl.from(".welcome_first", { duration: 1.5, translateY: 50, opacity: 0})
 }
 
 const tl = gsap.timeline();
@@ -39,7 +39,10 @@ barba.init({
         await delay(1500);
         done();
       },
-      async enter() {
+      async enter(data) {
+        contentAnimation();
+      },
+      async once(data) {
         contentAnimation();
       }
     },

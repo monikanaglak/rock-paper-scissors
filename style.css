@@ -215,6 +215,8 @@ ul.transition li {
 .result {
   color: white;
   font-size: 2rem;
+  border:1px solid red;
+  height: 10vh;
 }
 .gameover .stop{
   position: absolute;

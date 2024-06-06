@@ -13,7 +13,6 @@ const monika = gsap.timeline();
 
 
 all_buttons.forEach((btn) => {
-  
   btn.addEventListener("click", (e) => {
     user_choice_display.textContent = e.target.id;
     computer_choice_display.textContent =
@@ -42,17 +41,15 @@ function getResult(user_choice_display, computer_choice_display) {
       break;
   }
 }
-let restart_btn = document.querySelector(".choice_restart");
+let restart_btn = document.querySelector(".hello");
 
 function userwon() {
   result_display.innerHTML = "User Won";
   user_compteur.textContent++;
-  
   if (user_compteur.innerHTML == 3) {
     game_over.innerHTML = "Game over";
-    let hello = document.querySelector(".hello");
-    hello.classList.add("visible")
-    monika.to(".hello",{height:700,duration:1,delay:0.2});
+    alert("game over")
+    restart_btn.classList.add("visible")
   }
 }
 

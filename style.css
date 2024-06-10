@@ -14,6 +14,15 @@ body {
 .test{
   border:2px solid red;
 }
+.start{
+  width: 100%;
+  height: 100%;
+  background-color: yellow;
+  display: none;
+}
+.start.visible{
+  display: block;
+}
 .hello{
   width: 100vw;
   height: 20vh;

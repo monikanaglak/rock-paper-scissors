@@ -9,7 +9,7 @@ let start = document.querySelector(".start");
 let user_compteur = document.querySelector(".user_compteur");
 let computer_compteur = document.querySelector(".computer_compteur");
 let game_over = document.querySelector(".welcome_secondp");
-
+let restart_btn = document.querySelector(".hello");
 
 
 all_buttons.forEach((btn) => {
@@ -20,6 +20,7 @@ all_buttons.forEach((btn) => {
     getResult(user_choice_display, computer_choice_display);
   });
 });
+
 function getResult(user_choice_display, computer_choice_display) {
   let user = user_choice_display.textContent;
   let computer = computer_choice_display.textContent;
@@ -41,15 +42,20 @@ function getResult(user_choice_display, computer_choice_display) {
       break;
   }
 }
-let restart_btn = document.querySelector(".hello");
+
 
 function userwon() {
   result_display.innerHTML = "User Won";
   user_compteur.textContent++;
   if (user_compteur.innerHTML == 3) {
     game_over.innerHTML = "Game over";
-    start.classList.add("visible");
-    restart_btn.classList.add("visible");
+    let new_page = document.createElement("div")
+    let new_button = document.createElement("button")
+    new_button.textContent = "restart game"
+    new_page.classList.add("visible");
+    let hook = document.querySelector(".restart-game");
+    new_page.appendChild(new_button)
+    hook.appendChild(new_page);
   }
 }
 

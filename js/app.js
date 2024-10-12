@@ -1,29 +1,27 @@
-const choice = ["paper", "rock", "scissors"];
+const buttons = ["paper", "rock", "scissors"];
 const all_buttons = document.querySelectorAll("button");
-const user_choice_display = document.querySelector(".user_choice_display");
-const computer_choice_display = document.querySelector(
+const user_choice = document.querySelector(".user_choice_display");
+const computer_choice = document.querySelector(
   ".computer_choice_display"
 );
-const result_display = document.querySelector(".result");
+const result_display = document.querySelector(".game-result");
 let start = document.querySelector(".start");
 let user_compteur = document.querySelector(".user_compteur");
 let computer_compteur = document.querySelector(".computer_compteur");
-let game_over = document.querySelector(".welcome_secondp");
-let restart_btn = document.querySelector(".hello");
-
-
+let test = document.querySelector(".game");
+let game_over = document.querySelector(".game-over");
 all_buttons.forEach((btn) => {
   btn.addEventListener("click", (e) => {
-    user_choice_display.textContent = e.target.id;
-    computer_choice_display.textContent =
-      choice[Math.floor(choice.length * Math.random())];
-    getResult(user_choice_display, computer_choice_display);
+    user_choice.textContent = e.target.id;
+    computer_choice.textContent =
+      buttons[Math.floor(buttons.length * Math.random())];
+    getResult(user_choice, computer_choice);
   });
 });
 
-function getResult(user_choice_display, computer_choice_display) {
-  let user = user_choice_display.textContent;
-  let computer = computer_choice_display.textContent;
+function getResult(user_choice, computer_choice) {
+  let user = user_choice.textContent;
+  let computer = computer_choice.textContent;
   switch (user + computer) {
     case "scissorspaper":
     case "rockscissors":
@@ -43,31 +41,23 @@ function getResult(user_choice_display, computer_choice_display) {
   }
 }
 
-
 function userwon() {
   result_display.innerHTML = "User Won";
   user_compteur.textContent++;
   if (user_compteur.innerHTML == 3) {
+    console.log("je suis ici + " + user_compteur.innerHTML)
     game_over.innerHTML = "Game over";
-    let new_page = document.createElement("div")
-    let new_button = document.createElement("button")
-    new_button.textContent = "restart game"
-    new_page.classList.add("visible");
-    let hook = document.querySelector(".restart-game");
-    new_page.appendChild(new_button)
-    hook.appendChild(new_page);
+    restart_game()
   }
 }
 
 function computerwon() {
   result_display.innerHTML = "Computer Won";
   computer_compteur.textContent++;
-  console.log(computer_compteur.innerHTML);
-  if (computer_compteur.innerHTML == 3) {
+    if (computer_compteur.innerHTML == 3) {
     game_over.innerHTML = "Game over";
-    restart_btn.classList.add("visible");
-    start.classList.add("visible");
-  }
+    restart_game()
+    }
 }
 function egalite() {
   result_display.innerHTML = "Nobody won";
@@ -75,5 +65,11 @@ function egalite() {
 function restart_game() {
   user_compteur.innerHTML = 0;
   computer_compteur.innerHTML = 0;
+  test.classList.add("flex")
+    let btn = document.createElement("a");
+    btn.href = "../game.html"
+    btn.textContent = "play again";
+    btn.classList.add("play-again");
+    test.appendChild(btn)
   game_over.innerHTML = "Let's try again, three points to won";
 }

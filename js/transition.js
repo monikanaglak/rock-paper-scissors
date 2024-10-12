@@ -16,7 +16,7 @@ function pageTransition() {
 }
 function contentAnimation() {
   var tl = gsap.timeline();
-  tl.from(".welcome_first", { duration: 1.5, translateY: 50, opacity: 0})
+  /*tl.from(".welcome_first", { duration: 1.5, translateY: 50, opacity: 0})*/
 }
 
 const tl = gsap.timeline();

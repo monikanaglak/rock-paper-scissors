@@ -3,38 +3,52 @@
   margin: 0;
   box-sizing: border-box;
 }
+.flex {
+  display: flex;
+  justify-content: center;
+}
+.play-again {
+  z-index: 999;
+  background-color: #ec4aef;
+  padding: 50px;
+  position: absolute;
+}
 body {
   font-family: "Bangers", cursive;
   background-image: url("./images/backgroundtwo.jpg");
 }
-
-.choice_restart{
-  display:none;
+.wrapper {
+  border: 1px solid red;
+  height: 100vh;
+  display: flex;
 }
-.visible{
+.choice_restart {
+  display: none;
+}
+.visible {
   animation-name: showing;
   animation-duration: 2s;
   animation-fill-mode: forwards;
   background-color: #ec4aef;
 }
 @keyframes showing {
-  0%{
+  0% {
     width: 100vw;
     height: 10vh;
   }
-  100%{
+  100% {
     width: 100vw;
     height: 100vh;
   }
 }
-.hello.visible{
+.hello.visible {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100vw;
-  height:1vh;
-  background-image:url(./images/backgroundtwo.jpg);
-  display:block;
+  height: 1vh;
+  background-image: url(./images/backgroundtwo.jpg);
+  display: block;
 }
 
 .peloader {
@@ -166,7 +180,7 @@ section p {
   margin-top: 10vh;
 }
 
-.result {
+.game-result {
   display: flex;
   justify-content: center;
   margin-top: 20px;
@@ -181,7 +195,7 @@ section p {
   letter-spacing: 1px;
   text-transform: uppercase;
 }
-.butons {
+.buttons {
   display: flex;
   justify-content: center;
   gap: 2vw;
@@ -215,18 +229,18 @@ ul.transition li {
   background-image: url("./images/backgroundtwo.jpg");
   height: 100vh;
 }
-.result {
+.game-result {
   color: white;
   font-size: 2rem;
-  border:1px solid red;
+  border: 1px solid red;
   height: 10vh;
 }
-.gameover .stop{
+.gameover .stop {
   position: absolute;
-  top:0;
-  left:0;
-  color:white;
-  border:2px solid white;
+  top: 0;
+  left: 0;
+  color: white;
+  border: 2px solid white;
   height: 100vh;
   background-color: red;
   width: 100%;
